@@ -13,39 +13,39 @@ import java.util.Optional;
 @RestController
 public class GameController {
     //  TODO: change
-    public static final String DefaultUrl = "http://localhost:3000";
+    public static final String origin = "*";
 
     @Autowired
     GameRepository GameRepository;
 
-    @CrossOrigin(origins = DefaultUrl)
+    @CrossOrigin(origins = origin)
     @GetMapping(path = "/games")
     public List<Game> getAllGames() {
 
         return new ArrayList<>(GameRepository.findAll());
     }
 
-    @CrossOrigin(origins = DefaultUrl)
+    @CrossOrigin(origins = origin)
     @PostMapping(path = "/games", consumes = "application/json", produces = "application/json")
     public Game addGame( @RequestBody Game game) {
         GameRepository.save(game);
         return game;
     }
 
-    @CrossOrigin(origins = DefaultUrl)
+    @CrossOrigin(origins = origin)
     @DeleteMapping(path = "/game/{id}")
     public void deleteGame(@PathVariable int id) {
         GameRepository.deleteById(id);
     }
 
-    @CrossOrigin(origins = DefaultUrl)
+    @CrossOrigin(origins = origin)
     @GetMapping(path = "/game/{id}")
     public Optional<Game> getOneMatch(@PathVariable int id) {
 
         return GameRepository.findById(id);
     }
 
-    @CrossOrigin(origins = DefaultUrl)
+    @CrossOrigin(origins = origin)
     @PutMapping(path = "/game")
     public Game editPlayer(@RequestBody Game game) {
         return GameRepository.save(game);
