@@ -36,19 +36,19 @@ public class TeamController {
     }
 
     @CrossOrigin(origins = origin)
-    @DeleteMapping(path = "/team/{id}")
+    @DeleteMapping(path = "/teams/{id}")
     public void deleteMach(@PathVariable int id) {
         TeamRepository.deleteById(id);
     }
 
     @CrossOrigin(origins = origin)
-    @GetMapping(path = "/team/{id}")
+    @GetMapping(path = "/teams/{id}")
     public Optional<Team> getOneItem(@PathVariable int id) {
         return TeamRepository.findById(id);
     }
 
     @CrossOrigin(origins = origin)
-    @PutMapping(path = "/team")
+    @PutMapping(path = "/teams")
     public Team editPlayer(@RequestBody Team team) {
         return TeamRepository.save(team);
     }

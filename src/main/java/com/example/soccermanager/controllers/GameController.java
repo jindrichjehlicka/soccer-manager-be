@@ -27,7 +27,8 @@ public class GameController {
 
     @CrossOrigin(origins = origin)
     @PostMapping(path = "/games")
-    public Game addGame( @RequestBody Game game) {
+    public Game addGame(@RequestBody Game game) {
+
         GameRepository.save(game);
         return game;
     }
@@ -35,6 +36,7 @@ public class GameController {
     @CrossOrigin(origins = origin)
     @DeleteMapping(path = "/games/{id}")
     public void deleteGame(@PathVariable int id) {
+
         GameRepository.deleteById(id);
     }
 
@@ -48,6 +50,7 @@ public class GameController {
     @CrossOrigin(origins = origin)
     @PutMapping(path = "/games")
     public Game editPlayer(@RequestBody Game game) {
+
         return GameRepository.save(game);
     }
 }
