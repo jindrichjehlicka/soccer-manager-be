@@ -20,7 +20,6 @@ public class TeamController {
 
     @Autowired
     TeamRepository TeamRepository;
-    GameRepository gameRepository;
 
     @CrossOrigin(origins = origin)
     @GetMapping(path = "/teams")

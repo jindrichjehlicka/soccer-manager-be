@@ -26,27 +26,27 @@ public class GameController {
     }
 
     @CrossOrigin(origins = origin)
-    @PostMapping(path = "/games", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/games")
     public Game addGame( @RequestBody Game game) {
         GameRepository.save(game);
         return game;
     }
 
     @CrossOrigin(origins = origin)
-    @DeleteMapping(path = "/game/{id}")
+    @DeleteMapping(path = "/games/{id}")
     public void deleteGame(@PathVariable int id) {
         GameRepository.deleteById(id);
     }
 
     @CrossOrigin(origins = origin)
-    @GetMapping(path = "/game/{id}")
+    @GetMapping(path = "/games/{id}")
     public Optional<Game> getOneMatch(@PathVariable int id) {
 
         return GameRepository.findById(id);
     }
 
     @CrossOrigin(origins = origin)
-    @PutMapping(path = "/game")
+    @PutMapping(path = "/games")
     public Game editPlayer(@RequestBody Game game) {
         return GameRepository.save(game);
     }
