@@ -41,50 +41,61 @@ public class Game {
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public String getLocation() {
+
         return location;
     }
 
     public void setLocation(String location) {
+
         this.location = location;
     }
 
     public LocalDateTime getStartDate() {
+
         return start_date;
     }
 
     public void setStartDate(LocalDateTime start_date) {
+
         this.start_date = start_date;
     }
 
     public LocalDateTime getDeletedAt() {
+
         return deleted_at;
     }
 
     public void setDeletedAt(LocalDateTime deleted_at) {
+
         this.deleted_at = deleted_at;
     }
 
     public int getTeamOneId() {
+
         return team_one_id;
     }
 
-    public void set(int team_one_id) {
+    public void setTeamOneId(int team_one_id) {
         this.team_one_id = team_one_id;
     }
 
     public int getTeamTwoId() {
+
         return team_two_id;
     }
 
     public void setTeamTwoId(int team_two_id) {
+
         this.team_two_id = team_two_id;
     }
 

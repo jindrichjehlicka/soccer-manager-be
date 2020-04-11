@@ -21,6 +21,7 @@ public class PlayerController {
     @CrossOrigin(origins = origin)
     @GetMapping(path = "/players")
     public List<Player> getAllPlayers() {
+
         return new ArrayList<>(PlayerRepository.findAll());
     }
 
@@ -32,19 +33,19 @@ public class PlayerController {
     }
 
     @CrossOrigin(origins = origin)
-    @DeleteMapping(path = "/player/{id}")
+    @DeleteMapping(path = "/players/{id}")
     public void deletePlayer(@PathVariable int id) {
         PlayerRepository.deleteById(id);
     }
 
     @CrossOrigin(origins = origin)
-    @GetMapping(path = "/player/{id}")
+    @GetMapping(path = "/players/{id}")
     public Optional<Player> getPlayer(@PathVariable int id) {
         return PlayerRepository.findById(id);
     }
 
     @CrossOrigin(origins = origin)
-    @PutMapping(path = "/player")
+    @PutMapping(path = "/players")
     public Player editPlayer(@RequestBody Player player) {
         return PlayerRepository.save(player);
     }

@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-//@Table(name="teams")
+
 public class Team {
 
     @Id
@@ -23,7 +23,7 @@ public class Team {
     private String country;
     private LocalDateTime deleted_at;
 
-    @Where(clause = "deleted_at=null")
+//    @Where(clause = "deleted_at=null")
 
     public int getId() {
         return id;
