@@ -26,8 +26,9 @@ public class PlayerController {
     }
 
     @CrossOrigin(origins = origin)
-    @PostMapping(path = "/players", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/players")
     public Player addPlayer( @RequestBody Player player) {
+
         PlayerRepository.save(player);
         return player;
     }
@@ -35,18 +36,29 @@ public class PlayerController {
     @CrossOrigin(origins = origin)
     @DeleteMapping(path = "/players/{id}")
     public void deletePlayer(@PathVariable int id) {
+
         PlayerRepository.deleteById(id);
     }
 
     @CrossOrigin(origins = origin)
     @GetMapping(path = "/players/{id}")
     public Optional<Player> getPlayer(@PathVariable int id) {
+
         return PlayerRepository.findById(id);
     }
 
     @CrossOrigin(origins = origin)
     @PutMapping(path = "/players")
     public Player editPlayer(@RequestBody Player player) {
+
         return PlayerRepository.save(player);
+    }
+
+//    TODO use one-to-many instead
+    @CrossOrigin(origins = origin)
+    @GetMapping(path = "/players/team/{id}")
+    public List<Player> getPlayers(@PathVariable int id) {
+
+        return PlayerRepository.findByTeamId(id);
     }
 }

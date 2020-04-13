@@ -16,8 +16,8 @@ public class Player {
     private String name;
     private String position;
     //    todo add one to many relation
-    private int team_id;
-    private LocalDateTime deleted_at;
+    private int teamId;
+    private LocalDateTime deletedAt;
 
 
     //    @Where(clause = "deleted_at=null")
@@ -46,19 +46,19 @@ public class Player {
     }
 
     public int getTeamId() {
-        return team_id;
+        return teamId;
     }
 
-    public void setTeamId(int team_id) {
-        this.team_id = team_id;
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
     }
 
     public LocalDateTime getDeletedAt() {
-        return deleted_at;
+        return deletedAt;
     }
 
     public void setDeletedAt(LocalDateTime deleted_at) {
-        this.deleted_at = deleted_at;
+        this.deletedAt = deleted_at;
     }
 
 }
