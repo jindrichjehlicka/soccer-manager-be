@@ -25,13 +25,13 @@ public class Game {
 
     private String name;
     private String location;
-    private LocalDateTime start_date;
-    private LocalDateTime deleted_at;
+    private LocalDateTime startDate;
+    private LocalDateTime deletedAt;
     //TODO put into relation instead
-    private int team_one_id;
-    private int team_two_id;
+    private int teamOneId;
+    private int teamTwoId;
 
-    //    @Where(clause = "deleted_at=null")
+    //    @Where(clause = "deletedAt=null")
     public int getId() {
         return id;
     }
@@ -62,41 +62,41 @@ public class Game {
 
     public LocalDateTime getStartDate() {
 
-        return start_date;
+        return startDate;
     }
 
-    public void setStartDate(LocalDateTime start_date) {
+    public void setStartDate(LocalDateTime startDate) {
 
-        this.start_date = start_date;
+        this.startDate = startDate;
     }
 
     public LocalDateTime getDeletedAt() {
 
-        return deleted_at;
+        return deletedAt;
     }
 
-    public void setDeletedAt(LocalDateTime deleted_at) {
+    public void setDeletedAt(LocalDateTime deletedAt) {
 
-        this.deleted_at = deleted_at;
+        this.deletedAt = deletedAt;
     }
 
     public int getTeamOneId() {
 
-        return team_one_id;
+        return teamOneId;
     }
 
-    public void setTeamOneId(int team_one_id) {
-        this.team_one_id = team_one_id;
+    public void setTeamOneId(int teamOneId) {
+        this.teamOneId = teamOneId;
     }
 
     public int getTeamTwoId() {
 
-        return team_two_id;
+        return teamTwoId;
     }
 
-    public void setTeamTwoId(int team_two_id) {
+    public void setTeamTwoId(int teamTwoId) {
 
-        this.team_two_id = team_two_id;
+        this.teamTwoId = teamTwoId;
     }
 
 }

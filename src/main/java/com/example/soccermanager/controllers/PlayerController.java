@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,9 +36,11 @@ public class PlayerController {
 
     @CrossOrigin(origins = origin)
     @DeleteMapping(path = "/players/{id}")
-    public void deletePlayer(@PathVariable int id) {
-
+    public HashMap<String, String> deletePlayer(@PathVariable int id) {
         PlayerRepository.deleteById(id);
+        HashMap<String, String> response = new HashMap<>();
+        response.put("message", "Player has been deleted");
+        return response;
     }
 
     @CrossOrigin(origins = origin)
