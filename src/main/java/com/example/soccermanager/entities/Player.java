@@ -15,8 +15,9 @@ public class Player {
 
     private String name;
     private String position;
+    private boolean isSubstitute = false;
     //    todo add one to many relation
-    private int teamId;
+    private int teamId = 0;
     private LocalDateTime deletedAt;
 
 
@@ -43,6 +44,14 @@ public class Player {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public boolean getIsSubstitute() {
+        return isSubstitute;
+    }
+
+    public void setIsSubstitute(boolean isSubstitute) {
+        this.isSubstitute = isSubstitute;
     }
 
     public int getTeamId() {
